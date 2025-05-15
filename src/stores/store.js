@@ -1,4 +1,4 @@
-import { initCustomFormatter, ref } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useRouter } from 'vue-router'
 
@@ -14,8 +14,23 @@ export const useStore = defineStore('store', () => {
       outputData.value.push(JSON.parse(JSON.stringify(inputData.value)))
     }
     localStorage.setItem("OutputData", JSON.stringify(outputData.value))
-    router.push('/')
+    cancel()
+  }
+
+  function editEntry(index){
+    inputData.value = outputData.value[index]
+    inputData.value.index = index
+    router.push('/inPut')
+  }
+
+  function deleteFromList(index){
+    outputData.value.splice(index, 1)
+    cancel()
+  }
+
+  function cancel(){
     inputData.value = {}
+    router.push('/')
   }
 
 
@@ -23,5 +38,8 @@ export const useStore = defineStore('store', () => {
     inputData,
     outputData,
     addToList,
+    editEntry,
+    deleteFromList,
+    cancel,
   }
 })

@@ -11,8 +11,8 @@
       
 
       <nav>
-        <RouterLink to="/">Eingaben</RouterLink>
-        <RouterLink to="/outPut">Ausgaben</RouterLink>
+        <RouterLink to="/input">Neu</RouterLink>
+
       </nav>
     </div>
   </header>

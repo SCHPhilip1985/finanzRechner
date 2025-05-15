@@ -15,9 +15,13 @@ const store = useStore()
     <option>Auto</option>
     <option>Hunde</option>
 </select>
+<input type="date" v-model="store.inputData.datum">
 <br>
 <button @click="store.addToList()">Safe</button>
-<button>Löschen</button>
+<button @click="store.deleteFromList(store.inputData.index)" v-if="store.inputData.index === 0 || store.inputData.index">Löschen</button>
+<button @click="store.cancel()">Abbrechen</button>
+{{ store.inputData }}
+
 
 
 
