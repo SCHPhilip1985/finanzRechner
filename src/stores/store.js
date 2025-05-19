@@ -6,6 +6,9 @@ export const useStore = defineStore('store', () => {
   const inputData = ref({})
   const outputData = ref(JSON.parse(localStorage.getItem("OutputData")) || [])
   const router = useRouter()
+  const selecter = ref({})
+
+  
 
   const sum = computed(() => {
     // outputData.value[1].euro
@@ -95,6 +98,7 @@ function sumValueUnderCondition(compareValue){
     sum,
     sumHaushaltsmittel,
     sumLebensmittel,
+    selecter,
   
   }
 })
