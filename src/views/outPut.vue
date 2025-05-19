@@ -23,7 +23,13 @@ const store = useStore()
 
   <button @click="store.editEntry(index)">Ändern</button>
   <button @click="store.deleteFromList(index)">Löschen</button>
+
 </section>
+{{ store.sum }}
+{{ store.sumHaushaltsmittel }}
+{{ store.sumLebensmittel }}
+<hr>
+{{ store.outputData }}
   </main>
 </template>
 

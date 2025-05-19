@@ -20,7 +20,7 @@ const store = useStore()
 <button @click="store.addToList()">Safe</button>
 <button @click="store.deleteFromList(store.inputData.index)" v-if="store.inputData.index === 0 || store.inputData.index">Löschen</button>
 <button @click="store.cancel()">Abbrechen</button>
-{{ store.inputData }}
+
 
 
 
